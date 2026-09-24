@@ -17,16 +17,26 @@
 
 <div class="lang-section">
 <h1>개인정보처리방침</h1>
-<p class="date">시행일: 2026년 3월 8일</p>
+<p class="date">시행일: 2026년 9월 25일</p>
 
 <p>DCompany(이하 "회사")는 AllMemo(이하 "앱") 이용자의 개인정보를 중요시하며, 관련 법령을 준수합니다.</p>
 
 <h2>1. 수집하는 개인정보</h2>
 <p>본 앱은 별도의 회원가입 절차가 없으며, 서버에 개인정보를 수집하거나 저장하지 않습니다.</p>
 <ul>
-  <li>메모 데이터: 사용자의 기기에만 로컬로 저장되며, 외부 서버로 전송되지 않습니다.</li>
-  <li>광고 식별자(AD_ID): Google AdMob 광고 서비스를 위해 사용됩니다. 이는 Google의 개인정보처리방침에 따라 처리됩니다.</li>
-  <li>기기 식별자(ANDROID_ID): 로컬 데이터베이스 암호화 키 생성에만 사용되며, 외부로 전송되지 않습니다.</li>
+  <li>메모 데이터: 사용자의 기기에만 로컬로 저장되며, 외부 서버로 전송되지 않습니다. 메모 본문과 개인정보 항목은 메모마다 다른 키로 암호화되어 저장됩니다.</li>
+  <li>광고 식별자: Google AdMob 광고 서비스를 위해 사용되며, Google의 개인정보처리방침에 따라 처리됩니다.
+    <ul>
+      <li>Android: 광고 ID(AD_ID)</li>
+      <li>iOS: 광고 식별자(IDFA) — 앱 추적 투명성(ATT) 요청에서 이용자가 '허용'한 경우에만 사용됩니다. 허용하지 않으면 IDFA는 수집되지 않으며, 추적하지 않는 광고가 표시됩니다. 이 설정은 iOS [설정 &gt; 개인정보 보호 및 보안 &gt; 추적]에서 언제든 변경할 수 있습니다.</li>
+    </ul>
+  </li>
+  <li>기기 내 암호화 키: 메모를 기기 안에서 암호화하는 데에만 사용되며, 외부로 전송되지 않습니다.
+    <ul>
+      <li>Android: 기기 식별자(ANDROID_ID)를 이용해 로컬 데이터베이스 암호화 키를 생성하고, 암호화 키는 Android Keystore로 보호됩니다.</li>
+      <li>iOS: 기기 하드웨어 식별자는 사용하지 않습니다. 앱 설치 시 생성한 임의의 값과 암호화 키를 iOS 키체인(Keychain)에 저장하며, 기기 잠금이 해제된 상태에서만 접근할 수 있습니다.</li>
+    </ul>
+  </li>
 </ul>
 
 <h2>2. 개인정보의 이용 목적</h2>
@@ -36,19 +46,21 @@
 </ul>
 
 <h2>3. 개인정보의 제3자 제공</h2>
-<p>회사는 이용자의 개인정보를 제3자에게 제공하지 않습니다. 단, Google AdMob 광고 SDK가 광고 제공을 위해 광고 식별자를 수집할 수 있으며, 이는 Google의 개인정보처리방침을 따릅니다.</p>
+<p>회사는 이용자의 개인정보를 제3자에게 제공하지 않습니다. 단, Google AdMob 광고 SDK가 광고 제공·광고 측정·오류 진단을 위해 광고 식별자, 대략적인 위치(IP 주소 기반), 광고 상호작용 정보, 진단 정보를 수집할 수 있으며, 이는 Google의 개인정보처리방침을 따릅니다. 앱 자체는 이용자의 데이터를 회사 서버로 전송하지 않습니다.</p>
 
 <h2>4. 개인정보의 보관 및 파기</h2>
-<p>모든 데이터는 사용자의 기기에만 저장됩니다. 앱을 삭제하면 모든 데이터가 함께 삭제됩니다.</p>
+<p>모든 데이터는 사용자의 기기에만 저장됩니다. 앱을 삭제하면 메모 데이터가 함께 삭제됩니다. 단, iOS에서는 운영체제 특성상 키체인에 저장된 암호화 키가 앱 삭제 후에도 기기에 남아 있을 수 있습니다. 이 키에는 메모 내용이 포함되어 있지 않으며, 외부로 전송되지 않습니다.</p>
+<p>iOS에서는 이용자의 기기 백업 설정(iCloud 백업, 컴퓨터로의 암호화된 백업, 기기 간 직접 전송)에 따라 앱 데이터가 백업에 포함되어 새 기기로 복원될 수 있습니다. Android에서는 앱 데이터가 기기 백업에서 제외되며, 다른 기기로 옮기려면 앱의 내보내기 기능을 이용해야 합니다.</p>
 
 <h2>5. 이용자의 권리</h2>
 <ul>
   <li>앱 내 설정에서 데이터를 이메일로 내보낼 수 있습니다.</li>
-  <li>앱 삭제 시 모든 데이터가 기기에서 완전히 제거됩니다.</li>
+  <li>앱 삭제 시 메모 데이터가 기기에서 제거됩니다.</li>
+  <li>iOS 이용자는 기기 설정에서 앱의 추적 허용 여부를 언제든 변경할 수 있습니다.</li>
 </ul>
 
 <h2>6. 광고 서비스</h2>
-<p>본 앱은 Google AdMob을 통해 보상형 광고를 제공합니다. Google의 광고 서비스 관련 개인정보처리방침은 아래를 참고하세요.</p>
+<p>본 앱은 Android와 iOS 모두에서 Google AdMob을 통해 보상형 광고를 제공합니다. Google의 광고 서비스 관련 개인정보처리방침은 아래를 참고하세요.</p>
 <ul>
   <li><a href="https://policies.google.com/privacy">Google 개인정보처리방침</a></li>
 </ul>
@@ -64,16 +76,26 @@
 
 <div class="lang-section">
 <h1>Privacy Policy</h1>
-<p class="date">Effective Date: March 8, 2026</p>
+<p class="date">Effective Date: September 25, 2026</p>
 
 <p>DCompany ("Company") values the privacy of AllMemo ("App") users and complies with applicable laws.</p>
 
 <h2>1. Information We Collect</h2>
 <p>This app does not require registration and does not collect or store personal information on external servers.</p>
 <ul>
-  <li>Memo data: Stored locally on the user's device only and is not transmitted to external servers.</li>
-  <li>Advertising ID (AD_ID): Used for Google AdMob advertising services, processed according to Google's Privacy Policy.</li>
-  <li>Device ID (ANDROID_ID): Used solely for local database encryption key generation and is not transmitted externally.</li>
+  <li>Memo data: Stored locally on the user's device only and is not transmitted to external servers. Memo content and private entries are stored encrypted, with a different key for each memo.</li>
+  <li>Advertising identifier: Used for Google AdMob advertising services, processed according to Google's Privacy Policy.
+    <ul>
+      <li>Android: Advertising ID (AD_ID)</li>
+      <li>iOS: Identifier for Advertisers (IDFA) — used only if you tap "Allow" on the App Tracking Transparency (ATT) prompt. If you do not allow tracking, the IDFA is not collected and non-tracking ads are shown. You can change this at any time in iOS Settings &gt; Privacy &amp; Security &gt; Tracking.</li>
+    </ul>
+  </li>
+  <li>On-device encryption key: Used solely to encrypt your memos on the device and is not transmitted externally.
+    <ul>
+      <li>Android: The local database encryption key is generated using the device ID (ANDROID_ID) and protected by the Android Keystore.</li>
+      <li>iOS: No hardware device identifier is used. A random value generated at installation and the encryption key are stored in the iOS Keychain, accessible only while the device is unlocked.</li>
+    </ul>
+  </li>
 </ul>
 
 <h2>2. Purpose of Use</h2>
@@ -83,19 +105,21 @@
 </ul>
 
 <h2>3. Sharing with Third Parties</h2>
-<p>We do not share personal information with third parties. However, the Google AdMob SDK may collect advertising identifiers for ad delivery, subject to Google's Privacy Policy.</p>
+<p>We do not share personal information with third parties. However, the Google AdMob SDK may collect advertising identifiers, approximate location (based on IP address), ad interaction data, and diagnostic data for ad delivery, measurement, and troubleshooting, subject to Google's Privacy Policy. The app itself does not transmit your data to our servers.</p>
 
 <h2>4. Data Retention and Deletion</h2>
-<p>All data is stored only on the user's device. Uninstalling the app deletes all data.</p>
+<p>All data is stored only on the user's device. Uninstalling the app deletes your memo data. On iOS, however, the encryption key stored in the Keychain may remain on the device after the app is deleted, due to how iOS works. This key contains no memo content and is never transmitted externally.</p>
+<p>On iOS, depending on your device backup settings (iCloud Backup, encrypted computer backups, or direct device-to-device transfer), app data may be included in backups and restored to a new device. On Android, app data is excluded from device backups; use the app's export feature to move your memos to another device.</p>
 
 <h2>5. User Rights</h2>
 <ul>
   <li>You can export data via email through the app's settings.</li>
-  <li>Uninstalling the app completely removes all data from your device.</li>
+  <li>Uninstalling the app removes your memo data from your device.</li>
+  <li>iOS users can change whether the app is allowed to track at any time in the device settings.</li>
 </ul>
 
 <h2>6. Advertising</h2>
-<p>This app provides rewarded ads through Google AdMob. For Google's advertising privacy policy, please refer to:</p>
+<p>This app provides rewarded ads through Google AdMob on both Android and iOS. For Google's advertising privacy policy, please refer to:</p>
 <ul>
   <li><a href="https://policies.google.com/privacy">Google Privacy Policy</a></li>
 </ul>
@@ -111,16 +135,26 @@
 
 <div class="lang-section">
 <h1>プライバシーポリシー</h1>
-<p class="date">施行日: 2026年3月8日</p>
+<p class="date">施行日: 2026年9月25日</p>
 
 <p>DCompany（以下「当社」）は、AllMemo（以下「アプリ」）利用者の個人情報を重視し、関連法令を遵守します。</p>
 
 <h2>1. 収集する個人情報</h2>
 <p>本アプリは会員登録が不要であり、外部サーバーに個人情報を収集・保存しません。</p>
 <ul>
-  <li>メモデータ: ユーザーのデバイスにのみローカル保存され、外部サーバーには送信されません。</li>
-  <li>広告識別子（AD_ID）: Google AdMob広告サービスのために使用され、Googleのプライバシーポリシーに従って処理されます。</li>
-  <li>デバイス識別子（ANDROID_ID）: ローカルデータベース暗号化キーの生成にのみ使用され、外部には送信されません。</li>
+  <li>メモデータ: ユーザーのデバイスにのみローカル保存され、外部サーバーには送信されません。メモ本文とプライベート項目は、メモごとに異なるキーで暗号化して保存されます。</li>
+  <li>広告識別子: Google AdMob広告サービスのために使用され、Googleのプライバシーポリシーに従って処理されます。
+    <ul>
+      <li>Android: 広告ID（AD_ID）</li>
+      <li>iOS: 広告識別子（IDFA）— App Tracking Transparency（ATT）の確認で「許可」した場合にのみ使用されます。許可しない場合、IDFAは収集されず、トラッキングを行わない広告が表示されます。この設定はiOSの［設定 &gt; プライバシーとセキュリティ &gt; トラッキング］でいつでも変更できます。</li>
+    </ul>
+  </li>
+  <li>端末内の暗号化キー: 端末内でメモを暗号化するためにのみ使用され、外部には送信されません。
+    <ul>
+      <li>Android: デバイス識別子（ANDROID_ID）を用いてローカルデータベースの暗号化キーを生成し、暗号化キーはAndroid Keystoreで保護されます。</li>
+      <li>iOS: 端末のハードウェア識別子は使用しません。インストール時に生成したランダムな値と暗号化キーをiOSのキーチェーン（Keychain）に保存し、端末のロック解除中のみアクセスできます。</li>
+    </ul>
+  </li>
 </ul>
 
 <h2>2. 利用目的</h2>
@@ -130,19 +164,21 @@
 </ul>
 
 <h2>3. 第三者への提供</h2>
-<p>当社は個人情報を第三者に提供しません。ただし、Google AdMob SDKが広告配信のために広告識別子を収集する場合があり、これはGoogleのプライバシーポリシーに従います。</p>
+<p>当社は個人情報を第三者に提供しません。ただし、Google AdMob SDKが広告配信・広告効果測定・不具合診断のために、広告識別子、おおよその位置情報（IPアドレスに基づく）、広告の操作情報、診断情報を収集する場合があり、これはGoogleのプライバシーポリシーに従います。アプリ自体がユーザーのデータを当社のサーバーに送信することはありません。</p>
 
 <h2>4. データの保管と削除</h2>
-<p>すべてのデータはユーザーのデバイスにのみ保存されます。アプリを削除すると、すべてのデータが削除されます。</p>
+<p>すべてのデータはユーザーのデバイスにのみ保存されます。アプリを削除すると、メモデータが削除されます。ただしiOSでは、OSの仕様上、キーチェーンに保存された暗号化キーがアプリ削除後も端末に残る場合があります。このキーにメモの内容は含まれず、外部に送信されることもありません。</p>
+<p>iOSでは、端末のバックアップ設定（iCloudバックアップ、コンピュータへの暗号化バックアップ、端末間の直接転送）によって、アプリのデータがバックアップに含まれ、新しい端末に復元される場合があります。Androidでは、アプリのデータは端末のバックアップから除外されます。別の端末に移す場合は、アプリのエクスポート機能をご利用ください。</p>
 
 <h2>5. ユーザーの権利</h2>
 <ul>
   <li>アプリの設定からメールでデータをエクスポートできます。</li>
-  <li>アプリを削除すると、デバイスからすべてのデータが完全に削除されます。</li>
+  <li>アプリを削除すると、デバイスからメモデータが削除されます。</li>
+  <li>iOSをご利用の方は、端末の設定からアプリのトラッキング許可をいつでも変更できます。</li>
 </ul>
 
 <h2>6. 広告サービス</h2>
-<p>本アプリはGoogle AdMobを通じてリワード広告を提供しています。Googleの広告関連プライバシーポリシーは以下をご参照ください。</p>
+<p>本アプリはAndroidとiOSの両方でGoogle AdMobを通じてリワード広告を提供しています。Googleの広告関連プライバシーポリシーは以下をご参照ください。</p>
 <ul>
   <li><a href="https://policies.google.com/privacy">Googleプライバシーポリシー</a></li>
 </ul>
